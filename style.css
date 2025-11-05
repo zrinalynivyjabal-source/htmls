@@ -1,0 +1,127 @@
+:root {
+  color-scheme: light dark;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+  background: radial-gradient(circle at top, #222 0%, #111 100%);
+  color: #f7f7f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1a1a1a, #242a36);
+  padding: 2rem;
+}
+
+.calculator {
+  width: min(22rem, 100%);
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(15, 18, 24, 0.85);
+  border-radius: 1.5rem;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+}
+
+.display {
+  min-height: 5.5rem;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.expression {
+  min-height: 1.5rem;
+  font-size: 1rem;
+  color: rgba(247, 247, 247, 0.65);
+  word-break: break-all;
+}
+
+.result {
+  font-size: clamp(2rem, 4vw + 1rem, 3rem);
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.btn {
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+  padding: 0.9rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.06);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+  transform: translateY(0);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-operator {
+  background: linear-gradient(135deg, #ff8c37, #ff5f1f);
+  color: #10131a;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+  color: #0a101a;
+}
+
+.btn-zero {
+  grid-column: span 2;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 1.5rem 1rem;
+  }
+
+  .calculator {
+    border-radius: 1rem;
+    padding: 1.25rem;
+  }
+
+  .btn {
+    padding: 0.85rem;
+    font-size: 1rem;
+  }
+}
