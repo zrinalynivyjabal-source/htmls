@@ -7,38 +7,102 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="calculator" role="application" aria-label="Basic calculator">
-      <section class="display" aria-live="polite">
-        <div id="expression" class="expression" aria-hidden="true"></div>
-        <div id="result" class="result">0</div>
+      <main class="calculator" role="application" aria-label="Basic calculator">
+        <section class="display" aria-live="polite">
+          <div id="expression" class="expression" aria-hidden="true"></div>
+          <div id="result" class="result">0</div>
+        </section>
+        <section class="keypad" aria-label="Calculator keypad">
+          <button type="button" class="btn btn-secondary" data-action="clear" aria-label="Clear">AC</button>
+          <button type="button" class="btn btn-secondary" data-action="sign" aria-label="Toggle sign">±</button>
+          <button type="button" class="btn btn-secondary" data-action="percent" aria-label="Percent">%</button>
+          <button type="button" class="btn btn-operator" data-value="/" aria-label="Divide">÷</button>
+
+          <button type="button" class="btn" data-value="7">7</button>
+          <button type="button" class="btn" data-value="8">8</button>
+          <button type="button" class="btn" data-value="9">9</button>
+          <button type="button" class="btn btn-operator" data-value="*" aria-label="Multiply">×</button>
+
+          <button type="button" class="btn" data-value="4">4</button>
+          <button type="button" class="btn" data-value="5">5</button>
+          <button type="button" class="btn" data-value="6">6</button>
+          <button type="button" class="btn btn-operator" data-value="-" aria-label="Subtract">−</button>
+
+          <button type="button" class="btn" data-value="1">1</button>
+          <button type="button" class="btn" data-value="2">2</button>
+          <button type="button" class="btn" data-value="3">3</button>
+          <button type="button" class="btn btn-operator" data-value="+" aria-label="Add">+</button>
+
+          <button type="button" class="btn btn-zero" data-value="0">0</button>
+          <button type="button" class="btn" data-value=".">.</button>
+          <button type="button" class="btn btn-primary" data-action="equals" aria-label="Equals">=</button>
+        </section>
+      </main>
+
+      <section class="converter" aria-label="Unit converter">
+        <h2 class="converter-title">Unit Converter</h2>
+        <div class="converter-grid">
+          <label class="converter-field">
+            <span class="converter-label">Category</span>
+            <select
+              id="conversion-category"
+              class="converter-select"
+              aria-label="Unit category"
+            ></select>
+          </label>
+
+          <label class="converter-field converter-field--value">
+            <span class="converter-label">Value</span>
+            <input
+              id="conversion-value"
+              class="converter-input"
+              type="number"
+              inputmode="decimal"
+              placeholder="0"
+              aria-label="Value to convert"
+            />
+          </label>
+
+          <div class="converter-units" role="group" aria-label="Unit selection">
+            <label class="converter-field">
+              <span class="converter-label">From</span>
+              <select
+                id="conversion-from"
+                class="converter-select"
+                aria-label="Convert from unit"
+              ></select>
+            </label>
+
+            <button
+              type="button"
+              class="converter-swap"
+              id="conversion-swap"
+              aria-label="Swap units"
+            >
+              Swap
+            </button>
+
+            <label class="converter-field">
+              <span class="converter-label">To</span>
+              <select
+                id="conversion-to"
+                class="converter-select"
+                aria-label="Convert to unit"
+              ></select>
+            </label>
+          </div>
+        </div>
+
+        <p
+          class="converter-result"
+          id="conversion-output"
+          role="status"
+          aria-live="polite"
+        >
+          Enter a value to convert.
+        </p>
       </section>
-      <section class="keypad" aria-label="Calculator keypad">
-        <button type="button" class="btn btn-secondary" data-action="clear" aria-label="Clear">AC</button>
-        <button type="button" class="btn btn-secondary" data-action="sign" aria-label="Toggle sign">±</button>
-        <button type="button" class="btn btn-secondary" data-action="percent" aria-label="Percent">%</button>
-        <button type="button" class="btn btn-operator" data-value="/" aria-label="Divide">÷</button>
 
-        <button type="button" class="btn" data-value="7">7</button>
-        <button type="button" class="btn" data-value="8">8</button>
-        <button type="button" class="btn" data-value="9">9</button>
-        <button type="button" class="btn btn-operator" data-value="*" aria-label="Multiply">×</button>
-
-        <button type="button" class="btn" data-value="4">4</button>
-        <button type="button" class="btn" data-value="5">5</button>
-        <button type="button" class="btn" data-value="6">6</button>
-        <button type="button" class="btn btn-operator" data-value="-" aria-label="Subtract">−</button>
-
-        <button type="button" class="btn" data-value="1">1</button>
-        <button type="button" class="btn" data-value="2">2</button>
-        <button type="button" class="btn" data-value="3">3</button>
-        <button type="button" class="btn btn-operator" data-value="+" aria-label="Add">+</button>
-
-        <button type="button" class="btn btn-zero" data-value="0">0</button>
-        <button type="button" class="btn" data-value=".">.</button>
-        <button type="button" class="btn btn-primary" data-action="equals" aria-label="Equals">=</button>
-      </section>
-    </main>
-
-    <script src="script.js"></script>
+      <script src="script.js"></script>
   </body>
 </html>
